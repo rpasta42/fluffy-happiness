@@ -14,16 +14,6 @@ function init() {
    $(prevPage).show(); //slideDown();
 }
 
-var rotateDeg = 0;
-function rotateFirst() {
-   if (rotateDeg < 180) {
-      rotateDeg += 2;
-      var rotateStr = 'rotateY(' + rotateDeg + 'deg)';
-      $('.first').css('transform', rotateStr);
-      setTimeout(rotateFirst, 1);
-   }
-}
-
 $(function() {
    init();
 
@@ -52,34 +42,55 @@ $(function() {
       prevPage = pageId;
    });
 
-   $('.first').click(() => {
-      //$('.first').css('transform', 'rotateY(180deg)');
-      rotateFirst();
-   });
-
-
+   /*var finished = true;
    var hovering = false;
-   var t = $('.third');
+   var t = $('#third-front');
 
    function checkIfHovering() {
       if (hovering)
          setTimeout(checkIfHovering, 100);
-      else
+      else {
          animate(t, 'rotate-y-backwards-180', 1);
+         setTimeout(()=>finished = true, 1000);
+      }
    }
 
    t.hover(() => {
       if (hovering)
          return;
-      hovering = true;
+      if (!finished)
+         return;
+
+      hovering = true; finished = false;
       animate(t, 'rotate-y-forward-180', 1);
       setTimeout(checkIfHovering, 1400);
    });
 
    t.mouseout(function() {
       hovering = false;
+   });*/
+
+   var t1 = $('#third-front');
+   var t2 = $('#third-back');
+
+   t1.hover(() => {
+      animate(t1, 'rotate-y-forward-90', 0.5);
+      setTimeout(onHalfRot, 500);
    });
+
+   function onHalfRot() {
+      t1.hide();
+      //rotate(t2, y, 90);
+      t2.show();
+      animate(t2, 'rotate-y-backwards-90', 0.5);
+   }
+
 });
+
+var x = 'X'; var y = 'Y'; var z = 'Z';
+function rotate(el, axis, deg) {
+   el.css('transform', 'rotate' + axis + '(' + deg + 'deg)');
+}
 
 function animate(el, name, duration) {
    el.css('animation-name', name);

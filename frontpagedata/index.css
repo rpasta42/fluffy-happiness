@@ -152,14 +152,25 @@ a {
 }
 /* end tiles */
 
+#third-back {
+   display: none;
+}
 
 @keyframes rotate-y-forward-180 {
    from {transform: rotateY(0deg);}
    to   {transform: rotateY(180deg);}
 }
-
 @keyframes rotate-y-backwards-180 {
    from {transform: rotateY(180deg);}
+   to   {transform: rotateY(0deg);}
+}
+
+@keyframes rotate-y-forward-90 {
+   from {transform: rotateY(0deg);}
+   to   {transform: rotateY(90deg);}
+}
+@keyframes rotate-y-backwards-90 {
+   from {transform: rotateY(90deg);}
    to   {transform: rotateY(0deg);}
 }
 
