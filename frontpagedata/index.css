@@ -107,6 +107,7 @@ a {
    width:   100%;
 }
 
+
 /* tiles */
 /*html, body {
    height:        100%;
@@ -144,10 +145,16 @@ a {
     background-color:   #02498A;
 }
 .last {
-    float:        right;
-    width:        40%;
-    height:       20%;
-    background-color:   #66BE12;
+   float:               right;
+   width:               40%;
+   height:              20%;
+   background-color:    #66BE12;
 }
 /* end tiles */
+
+
+@keyframes mymove {
+   from {transform: rotateY(0deg);}
+   to   {transform: rotateY(180deg);}
+}
 

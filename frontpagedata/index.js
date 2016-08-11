@@ -14,6 +14,16 @@ function init() {
    $(prevPage).show(); //slideDown();
 }
 
+var rotateDeg = 0;
+function rotateFirst() {
+   if (rotateDeg < 180) {
+      rotateDeg += 2;
+      var rotateStr = 'rotateY(' + rotateDeg + 'deg)';
+      $('.first').css('transform', rotateStr);
+      setTimeout(rotateFirst, 1);
+   }
+}
+
 $(function() {
    init();
 
@@ -44,17 +54,14 @@ $(function() {
 
    $('.first').click(() => {
       //$('.first').css('transform', 'rotateY(180deg)');
-      /*$('.first').animate({
-         transform: 'rotateY(180deg)'
-      }/*, {
-         step: function(now, fx) {
-
-         }
-      }*/);*/
-
-
+      rotateFirst();
    });
-
+   var t = $('.third');
+   t.click(() => {
+      t.css('animation-name', 'mymove');
+      t.css('animation-duration', '1s');
+      t.css('animation-fill-mode', 'forwards');
+   });
 });
 
 
