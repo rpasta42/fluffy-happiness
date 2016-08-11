@@ -157,6 +157,10 @@ a {
    text-align:          center;
 }
 
+.ex-desc {
+   text-align:          center;
+}
+
 .front {
    position:            relative;
    height:              100%;
