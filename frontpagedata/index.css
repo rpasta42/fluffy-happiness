@@ -1,0 +1,112 @@
+@font-face {
+   font-family:   "Raleway";
+   src:           url(do-not-move-this-files/fonts/RaleywayFont.woff2);
+}
+
+html {
+   height:        100%;
+}
+
+body {
+   /*width: 35em;*/
+   height:        100%;
+   margin:        0 auto;
+   font-family:   Tahoma, Verdana, Arial, sans-serif;
+}
+
+#top-pan {
+   background-color:                #edecff;
+   border-bottom-right-radius:      6px;
+   border-bottom-left-radius:       6px;
+   border-bottom: 1px solid;
+   border-color:  #cfcecf;
+   /*min-height:  65px;*/
+   height:        10%;
+   max-height:    55px;
+   min-height:    40px;
+   padding:       15px;
+   position:      relative;
+}
+
+#tux {
+   width:         40px;
+   height:        40px;
+
+   position:      absolute;
+   top:           50%;
+   transform:     translateY(-50%);
+
+   left:          0;
+}
+
+#main-github-img {
+   width:         40px;
+   height:        40px;
+   /*float:         right;*/
+   right:          10px;
+
+   position:      absolute;
+   top:           50%;
+   transform:     translateY(-50%);
+}
+
+#name-text {
+   left:          100px;
+   position:      absolute;
+   top:           50%;
+   transform:     translateY(-50%);
+
+   color:         #134FB8;
+   font-size:     20px; /*130%;*/
+   font-family:   "Raleyway";
+}
+
+#top-tabs {
+   position:      relative;
+   float:         left;
+   left:          30%;
+}
+
+/* tiles */
+/*html, body {
+   height:        100%;
+   min-height:    100%;
+}*/
+.tile-container {
+   position:      absolute;
+   height:        600px;
+   width:         600px;
+   float:         left;
+}
+.first {
+   float:         left;
+   width:         20%;
+   height:        30%;
+   background-color:    #DE5A16;
+}
+.second {
+    float:        left;
+    width:        20%;
+    height:       70%;
+    background-color:   #01B4Df;
+}
+.third {
+    float:        right;
+    width:        80%;
+    height:       80%;
+    background-color:   #DB9A20;
+}
+.fourth {
+    float:        right;
+    width:        40%;
+    height:       20%;
+    background-color:   #02498A;
+}
+.last {
+    float:        right;
+    width:        40%;
+    height:       20%;
+    background-color:   #66BE12;
+}
+/* end tiles */
+
