@@ -15,17 +15,21 @@ body {
 }
 
 #top-pan {
-   /*min-height:  65px;*/
    background-color:                #edecff;
    border-bottom-right-radius:      6px;
    border-bottom-left-radius:       6px;
+   border-bottom: 1px solid;
+   border-color:  #cfcecf;
+
+}
+
+#nav-very-top {
+   /*min-height:  65px;*/
    height:        10%;
    max-height:    55px;
    min-height:    40px;
    padding:       15px;
    position:      relative;
-   border-bottom: 1px solid;
-   border-color:  #cfcecf;
 }
 
 #tux {
