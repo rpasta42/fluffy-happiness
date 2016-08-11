@@ -130,6 +130,16 @@ a {
 }
 /* end tiles */
 
+.ex-title {
+   font-size:           150%;
+   color:               #ffffff;
+   text-align:          center;
+}
+
+#pup-pic {
+   width:               90px;
+   height:              90px;
+}
 #third-back {
    display:             none;
 }
