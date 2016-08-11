@@ -3,6 +3,11 @@
    src:           url(do-not-move-this-files/fonts/RaleywayFont.woff2);
 }
 
+@font-face {
+   font-family:   "OpenSans";
+   src:           url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2);
+}
+
 html { height: 100%; }
 
 body {
@@ -34,6 +39,7 @@ body {
    border-bottom:                   1px solid;
    border-color:                    #cfcecf;
 }
+
 #nav-very-top {
    height:        60px;
    position:      relative;
@@ -131,7 +137,9 @@ a {
 /* end tiles */
 
 .ex-title {
+   font-family:         'OpenSans';
    font-size:           150%;
+   font-weight:         bold;
    color:               #ffffff;
    text-align:          center;
 }
