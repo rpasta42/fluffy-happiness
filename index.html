@@ -4,17 +4,12 @@
    <meta charset='UTF-8'>
    <title>Konstantin Kowalski's website</title>
    <script src='https://forty7.org/do-not-move-this-files/deps/jquery2.min.js'></script>
-   <script src='https://forty7.org/do-not-move-this-files/deps/bootstrap.min.js'></script>
+   <!--<script src='https://forty7.org/do-not-move-this-files/deps/bootstrap.min.js'></script>-->
    <link rel="stylesheet" href="https://forty7.org/do-not-move-this-files/deps/bootstrap.min.css">
    <link rel="stylesheet" href="https://forty7.org/do-not-move-this-files/deps/bootstrap-theme.min.css">
    <link rel='stylesheet' href='frontpagedata/index.css'>
 
-   <script>
-      $(function() {
-         /*var pos = 90 + $('#tux').width() + $('#name-text').width();
-         $('#top-tabs').css('left', pos + 'px');*/
-      });
-   </script>
+   <script src='frontpagedata/index.js'></script>
 </head>
 <body>
 
@@ -42,19 +37,26 @@
       </ul>
    </div>
 
-   <div class="tile-container">
-      <div class="first">first</div>
-      <div class="third">third</div>
-      <div class="second">second</div>
-      <div class="fourth">fourth</div>
-      <div class="last">last</div>
+   <div id='page-home' class='page'>
+         <div class="tile-container">
+            <div class="first">first</div>
+            <div class="third">third</div>
+            <div class="second">second</div>
+            <div class="fourth">fourth</div>
+            <div class="last">last</div>
+         </div>
+      <table></table>
    </div>
 
+   <div id='page-open-source' class='page'>
+      List of my projects
+   </div>
 
+   <div id='page-unity' class='page'>
+   </div>
 
-   <table>
-
-   </table>
+   <div id='page-about-me' class='page'>
+   </div>
 
    <!-- Hmm, I'm too lazy to make a website, so here's a picture of dancing Richard Stallman instead.
    </br>

@@ -39,10 +39,11 @@ body {
 }
 
 #nav-very-top {
-   height:        10%;
-   max-height:    55px;
-   min-height:    40px;
-   padding:       15px;
+   /*height:        10%;*/
+   height:        60px;
+   /*max-height:    55px;
+   min-height:    40px;*/
+   /*padding:       15px;*/
    position:      relative;
 }
 
@@ -50,6 +51,7 @@ body {
    width:         40px;
    height:        40px;
    left:          10px;
+   /*left:          180px;*/
 
    position:      absolute;
    top:           50%;
@@ -60,13 +62,28 @@ body {
    left:          100px;
    position:      absolute;
    top:           50%;
-   transform:     transformY(-50%);
+   transform:     translateY(-50%);
 
    font-size:     20px;
    font-family:   "Raleyway";
    color:         #134FB8;
-   /*font-size:     20px;*/  /*130%;*/
-   font-family:   "Raleyway";
+}
+#name-text:hover {
+   text-decoration:     none;
+}
+a {
+   outline:       0 !important;
+}
+
+.hovered {
+   background-color: white !important;
+}
+/*.nav-i>a:hover {
+   background-color:    white !important;
+}*/
+
+.active>a {
+   background-color:    #8ed1f2 !important;
 }
 
 /*#top-tabs {
@@ -83,6 +100,11 @@ body {
    margin:        0px !important;
 }*/
 
+.page {
+   position:relative;
+   height:  100%;
+   width:   100%;
+}
 
 /* tiles */
 /*html, body {
@@ -91,9 +113,10 @@ body {
 }*/
 .tile-container {
    position:      absolute;
-   height:        600px;
+   /*height:        600px;
    width:         600px;
-   float:         left;
+   float:         left;*/
+   width: 100%; height: 100%;
 }
 .first {
    float:         left;
