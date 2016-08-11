@@ -56,13 +56,36 @@ $(function() {
       //$('.first').css('transform', 'rotateY(180deg)');
       rotateFirst();
    });
+
+
+   var hovering = false;
    var t = $('.third');
-   t.click(() => {
-      t.css('animation-name', 'mymove');
-      t.css('animation-duration', '1s');
-      t.css('animation-fill-mode', 'forwards');
+
+   function checkIfHovering() {
+      if (hovering)
+         setTimeout(checkIfHovering, 100);
+      else
+         animate(t, 'rotate-y-backwards-180', 1);
+   }
+
+   t.hover(() => {
+      if (hovering)
+         return;
+      hovering = true;
+      animate(t, 'rotate-y-forward-180', 1);
+      setTimeout(checkIfHovering, 1400);
+   });
+
+   t.mouseout(function() {
+      hovering = false;
    });
 });
+
+function animate(el, name, duration) {
+   el.css('animation-name', name);
+   el.css('animation-duration', duration + 's');
+   el.css('animation-fill-mode', 'forwards');
+}
 
 
 

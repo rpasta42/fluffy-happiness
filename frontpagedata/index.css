@@ -153,8 +153,13 @@ a {
 /* end tiles */
 
 
-@keyframes mymove {
+@keyframes rotate-y-forward-180 {
    from {transform: rotateY(0deg);}
    to   {transform: rotateY(180deg);}
+}
+
+@keyframes rotate-y-backwards-180 {
+   from {transform: rotateY(180deg);}
+   to   {transform: rotateY(0deg);}
 }
 
