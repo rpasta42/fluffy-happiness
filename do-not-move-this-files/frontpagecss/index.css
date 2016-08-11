@@ -95,9 +95,9 @@ body {
     background-color:   #02498A;
 }
 .last {
-    float: right;
-    width: 40%;
-    height: 20%;
+    float:        right;
+    width:        40%;
+    height:       20%;
     background-color:   #66BE12;
 }
 /* end tiles */
