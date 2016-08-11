@@ -108,24 +108,28 @@ a {
    float:               left;
    width:               33.333%;
    height:              40%;
+   background-color:    #DE5A16;
 }
 #first > .back { background-color:    #DE5A16; }
 #second {
     float:              left;
     width:              33.333%;
     height:             60%;
+    background-color:   #01B4Df;
 }
 #second > .back { background-color:   #01B4Df; }
 #third {
     float:              right;
     width:              66.666%;
     height:             60%;
+    background-color:   #DB9A20;
 }
 #third > .back { background-color:   #DB9A20; }
 #fourth {
-    float:              right;
-    width:              33.333%;
-    height:             40%;
+   float:              right;
+   width:              33.333%;
+   height:             40%;
+   background-color:   #02498A;
 }
 #fourth > .back { background-color:   #02498A; }
 #fifth {
@@ -136,6 +140,13 @@ a {
 }
 #fifth > .back { background-color:    #66BE12; }
 /* end tiles */
+
+#first, #second, #third, #fourth, #fifth {
+   opacity:             0.8;
+}
+.tiles > .front > img {
+   opacity:             0.3;
+}
 
 .ex-title {
    font-family:         'OpenSans';
@@ -152,7 +163,7 @@ a {
    width:               100%;
 }
 
-#cart-img {
+.tile-img {
    position:            absolute;
    left:                0;
    top:                 0;

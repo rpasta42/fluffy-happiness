@@ -72,11 +72,13 @@ $(function() {
 
    $('.back').hide();
 
-   var t1 = $('#third-front');
-   var t2 = $('#third-back');
+   var t = $('.tiles');
 
-   t1.hover(() => {
-      animate(t1, 'rotate-y-forward-90', 0.5);
+   t.hover(() => {
+      var f = $(t).find('.front');
+      var b = $(t).find('.back');
+
+      animate(f, 'rotate-y-forward-90', 0.5);
       setTimeout(onHalfRot, 500);
    });
 
@@ -86,13 +88,21 @@ $(function() {
       t2.show();
       animate(t2, 'rotate-y-backwards-90', 0.5);
    }
+   /*var t1 = $('#third-front');
+   var t2 = $('#third-back');
+
+   t1.hover(() => {
+      animate(t1, 'rotate-y-forward-90', 0.5);
+      setTimeout(onHalfRot, 500);
+   });
+   function onHalfRot() {
+      t1.hide();
+      //rotate(t2, y, 90);
+      t2.show();
+      animate(t2, 'rotate-y-backwards-90', 0.5);
+   }*/
 
 });
-
-var x = 'X'; var y = 'Y'; var z = 'Z';
-function rotate(el, axis, deg) {
-   el.css('transform', 'rotate' + axis + '(' + deg + 'deg)');
-}
 
 function animate(el, name, duration) {
    el.css('animation-name', name);
@@ -100,5 +110,10 @@ function animate(el, name, duration) {
    el.css('animation-fill-mode', 'forwards');
 }
 
+
+var x = 'X'; var y = 'Y'; var z = 'Z';
+function rotate(el, axis, deg) {
+   el.css('transform', 'rotate' + axis + '(' + deg + 'deg)');
+}
 
 
