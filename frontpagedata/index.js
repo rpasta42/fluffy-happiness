@@ -71,23 +71,88 @@ $(function() {
    });*/
 
    $('.back').hide();
-
    var t = $('.tiles');
 
-   t.hover(() => {
-      var f = $(t).find('.front');
-      var b = $(t).find('.back');
-
-      animate(f, 'rotate-y-forward-90', 0.5);
-      setTimeout(onHalfRot, 500);
+   var status = {};
+   var status2 = {};
+   var status3 = {}; //need back?
+   t.each(function() {
+      var id = $(this).attr('id');
+      status[id] = 'inactive';
+      status2[id] = 'out';
+      status3[id] = false;
    });
 
-   function onHalfRot() {
-      t1.hide();
-      //rotate(t2, y, 90);
-      t2.show();
-      animate(t2, 'rotate-y-backwards-90', 0.5);
+   t.hover(function() {
+      var el = $(this);
+      var id = el.attr('id');
+
+      status2[id] = 'in';
+
+      if (status[id] != 'inactive') {
+         console.log("hovered, but we're busy: " + id);
+         return;
+      }
+      else
+         console.log('hovered, going to rotate: ' + id);
+
+      status[id] = 'started';
+
+      var f = el.find('.front');
+      var b = el.find('.back');
+
+      animate(f, 'rotate-y-forward-90', 0.5);
+      setTimeout(function() { onHalfRot(el, f, b) }, 500);
+   });
+
+   function onHalfRot(el, f, b) {
+      b.show();
+      f.hide();
+      rotate(b, y, 90);
+      animate(b, 'rotate-y-backwards-90', 0.5);
+      var id = el.attr('id');
+      setTimeout(function() { status[id] = 'turned'; status3[id] = true; }, 500);
    }
+
+   function onHalfBackRot(el, f, b) {
+      f.show();
+      b.hide();
+      var id = el.attr('id');
+
+      status2[id] = 'out';
+
+      rotate(f, y, 90);
+      animate(f, 'rotate-y-backward-90', 0.5);
+      setTimeout(function() { status[id] = 'inactive'; status3[id] = false; }, 500);
+   }
+
+   function onMouseOut() {
+      var el = $(this);
+      onMouseOutRec(el);
+   }
+
+   function onMouseOutRec(el) {
+      var id = el.attr('id');
+
+      if (status[id] != 'turned' && status3[id] == true) {
+         console.log("we haven't finished turning yet, can't turn back: " + id);
+         setTimeout(function() { onMouseOutRec(el); }, 500);
+         return;
+      }
+      else
+         console.log('rotating back: ' + id);
+
+      status[id] = 'startback';
+
+      var f = el.find('.front');
+      var b = el.find('.back');
+
+      rotate(b, y, 0);
+      animate(b, 'rotate-y-forward-90', 0.5);
+      setTimeout(function() { onHalfBackRot(el, f, b); }, 500);
+   }
+
+   t.mouseout(onMouseOut);
    /*var t1 = $('#third-front');
    var t2 = $('#third-back');
 
