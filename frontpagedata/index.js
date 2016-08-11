@@ -1,5 +1,8 @@
 var slideSpeed = 'fast'; //'slow';
 var prevPage = '#page-home';
+var duration = 0.3; //0.5;
+var durationMilli = duration * 1000;
+var checkIfNeedsToFlipBackDelay = 300;
 
 function onResize() {
    var pageHeight = ($(window).height() - $('#top-pan').height() - 1) + 'px';
@@ -96,17 +99,17 @@ $(function() {
       var f = el.find('.front');
       var b = el.find('.back');
 
-      animate(f, 'rotate-y-forward-90', 0.5);
-      setTimeout(function() { onHalfRot(el, f, b) }, 500);
+      animate(f, 'rotate-y-forward-90', duration);
+      setTimeout(function() { onHalfRot(el, f, b) }, durationMilli);
    });
 
    function onHalfRot(el, f, b) {
       b.show();
       f.hide();
-      rotate(b, y, 90);
-      animate(b, 'rotate-y-backwards-90', 0.5);
+      //rotate(b, y, 90);
+      animate(b, 'rotate-y-backwards-90', duration);
       var id = el.attr('id');
-      setTimeout(function() { status[id] = 'turned'; checkIfLeft(id); }, 500);
+      setTimeout(function() { status[id] = 'turned'; checkIfLeft(id); }, durationMilli);
    }
 
    function checkIfLeft(id) {
@@ -116,7 +119,7 @@ $(function() {
          onMouseOutRec(el);
       }
       else
-         setTimeout(function() { checkIfLeft(id); }, 300);
+         setTimeout(function() { checkIfLeft(id); }, checkIfNeedsToFlipBackDelay);
    }
 
 
@@ -125,13 +128,13 @@ $(function() {
       b.hide();
       var id = el.attr('id');
 
-      rotate(f, y, 90);
+      //rotate(f, y, 90);
       console.log('got here');
       setTimeout(function() {
          console.log('finished rotating back');
          status[id] = 'inactive';
-      }, 500);
-      animate(f, 'rotate-y-backwards-90', 0.5);
+      }, durationMilli);
+      animate(f, 'rotate-y-backwards-90', duration);
    }
 
    function onMouseOutRec(el) {
@@ -151,15 +154,14 @@ $(function() {
       var b = el.find('.back');
 
       rotate(b, y, 0);
-      animate(b, 'rotate-y-forward-90', 0.5);
-      setTimeout(function() { onHalfBackRot(el, f, b); }, 500);
+      animate(b, 'rotate-y-forward-90', duration);
+      setTimeout(function() { onHalfBackRot(el, f, b); }, durationMilli);
    }
 
    function onMouseOut() {
       var el = $(this);
       onMouseOutRec(el);
    }
-
 
    //t.mouseout(onMouseOut);
    /*var t1 = $('#third-front');
@@ -175,7 +177,6 @@ $(function() {
       t2.show();
       animate(t2, 'rotate-y-backwards-90', 0.5);
    }*/
-
 });
 
 function animate(el, name, duration) {
