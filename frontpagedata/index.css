@@ -36,63 +36,52 @@ body {
    border-bottom-left-radius:       6px;
    border-bottom: 1px solid;
    border-color:  #cfcecf;
-   height:        10%;
-   max-height:    50px;
-   min-height:    40px;
+}
 
+#nav-very-top {
+   height:        10%;
+   max-height:    55px;
+   min-height:    40px;
+   padding:       15px;
    position:      relative;
 }
 
 #main-github-img {
-   /*width:         40px;
-   height:        40px;*/
-   /*width:         2.5em;
-   height:        2.5em;*/
-   /*height:        100%;*/
-   /*width:         10%;
-   height:        80%;*/
-   /*float:         left;
-   margin-right:  10px;*/
-   height:        80%;
+   width:         40px;
+   height:        40px;
+   left:          10px;
+
    position:      absolute;
    top:           50%;
    transform:     translateY(-50%);
-   left:          10px;
 }
 
 #name-text {
-   /*float:         left;*/
-   /*font-size:     2.5em;*/
-   font-size:     1.5em;
-   margin-left:   3%;
-   /*font-size:     230%;*/
-   /*height:        100%;*/
-   /*height:        60em;
-   font-size:     150%;*/
    left:          100px;
    position:      absolute;
    top:           50%;
-   transform:     translateY(-50%);
+   transform:     transformY(-50%);
 
+   font-size:     20px;
+   font-family:   "Raleyway";
    color:         #134FB8;
    /*font-size:     20px;*/  /*130%;*/
    font-family:   "Raleyway";
-   margin-right:  10px;
 }
 
-#top-tabs {
+/*#top-tabs {
    position:      absolute;
    top:           70%;
    transform:     translateY(-50%);
    left:          30%;
    height:        80%;
-   /*float:         left;*/
-   /*left:          30%;*/
+   float:         left;
+   left:          30%;
    border:        0px;
-}
-#tab-home,#tab-open-source,#tab-unity,#tab-about-me {
+}*/
+/*#tab-home,#tab-open-source,#tab-unity,#tab-about-me {
    margin:        0px !important;
-}
+}*/
 
 
 /* tiles */
