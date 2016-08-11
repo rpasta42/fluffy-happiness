@@ -74,14 +74,12 @@ body {
 a {
    outline:       0 !important;
 }
-
 .hovered {
    background-color: white !important;
 }
 /*.nav-i>a:hover {
    background-color:    white !important;
 }*/
-
 .active>a {
    background-color:    #8ed1f2 !important;
 }
@@ -101,8 +99,11 @@ a {
 }*/
 
 .page {
-   position:relative;
-   height:  100%;
+   position:absolute;
+   /*top: 0;
+   right: 0;*/
+   left: 0;
+   /*height:  100%;*/
    width:   100%;
 }
 

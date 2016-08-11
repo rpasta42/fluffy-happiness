@@ -1,9 +1,21 @@
+function onResize() {
+   var pageHeight = ($(window).height() - $('#top-pan').height() - 1) + 'px';
+   //console.log('pageHeight: ' + pageHeight);
+   $('.page').css('height', pageHeight);
+}
+
 $(function() {
    var slideSpeed = 'fast'; //'slow';
    var prevPage = '#page-home';
 
+   onResize();
+   $(window).resize(function() {
+      onResize();
+   });
+
    //$('.page').css('display', 'none');
    $('.page').hide();
+
    $(prevPage).show(); //slideDown();
 
    /*var pos = 90 + $('#tux').width() + $('#name-text').width();
