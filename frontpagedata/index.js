@@ -70,6 +70,8 @@ $(function() {
       hovering = false;
    });*/
 
+   $('.back').hide();
+
    var t1 = $('#third-front');
    var t2 = $('#third-back');
 
