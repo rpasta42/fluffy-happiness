@@ -3,6 +3,7 @@ var prevPage = '#page-home';
 var duration = 0.3; //0.5;
 var durationMilli = duration * 1000;
 var checkIfNeedsToFlipBackDelay = 300;
+var debug = false;
 
 function onResize() {
    var pageHeight = ($(window).height() - $('#top-pan').height() - 1) + 'px';
@@ -76,6 +77,14 @@ $(function() {
    $('.back').hide();
    var t = $('.tiles');
 
+   $('.back').append('<a class="run"><h1>Run!</h1></a>');
+   $('#first > .back > .run').attr('href', 'https://forty7.org/buz/burnz/');
+   $('#second > .back > .run').attr('href', 'https://forty7.org/fun/ideal-octo-spork/');
+   $('#third > .back > .run').attr('href', 'https://forty7.org/fun/gol3d/gol/');
+   $('#fourth > .back > .run').attr('href', 'https://forty7.org/ira');
+   $('#fifth > .back > .run').attr('href', 'https://forty7.org/fun/wheel/');
+
+
    var status = {};
    t.each(function() {
       var id = $(this).attr('id');
@@ -88,11 +97,11 @@ $(function() {
       var id = el.attr('id');
 
       if (status[id] != 'inactive') {
-         console.log("hovered, but we're busy: " + id);
+         if (debug) console.log("hovered, but we're busy: " + id);
          return;
       }
       else
-         console.log('hovered, going to rotate: ' + id);
+         if (debug) console.log('hovered, going to rotate: ' + id);
 
       status[id] = 'started';
 
@@ -114,7 +123,7 @@ $(function() {
 
    function checkIfLeft(id) {
       var el = $('#' + id);
-      console.log($('#' + id + ':hover'));
+      if (debug) console.log($('#' + id + ':hover'));
       if ($('#' + id + ':hover').length == 0) {
          onMouseOutRec(el);
       }
@@ -129,9 +138,9 @@ $(function() {
       var id = el.attr('id');
 
       //rotate(f, y, 90);
-      console.log('got here');
+      if (debug) console.log('got here');
       setTimeout(function() {
-         console.log('finished rotating back');
+         if (debug) console.log('finished rotating back');
          status[id] = 'inactive';
       }, durationMilli);
       animate(f, 'rotate-y-backwards-90', duration);

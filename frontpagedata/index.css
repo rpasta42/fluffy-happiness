@@ -145,7 +145,7 @@ a {
    opacity:             0.8;
 }
 .tiles > .front > img {
-   opacity:             0.6; /*0.9; kkkkk tweakme*/
+   opacity:             0.3; /*0.6; 0.3; 0.9; kkkkk tweakme*/
 }
 .tiles > .back {
    opacity:             0.8;
@@ -161,7 +161,7 @@ a {
    text-align:          center;
 }
 
-#fourth > .front > .ex-title {
+/*#fourth > .front > .ex-title {
    color:               #ffffff;
 }
 #first > .front > .ex-title {
@@ -176,15 +176,30 @@ a {
    top:                 20px;
    left:                53%;
    transform:           translateX(-45%);
-}
+}*/
 
 .front > .ex-title {
-   background-color:    #ffffff;
+   background-color:    #cccccc;
+   opacity:             0.9;
+   border-radius:       1px;
+   border-width:        2px;
+   border-style:        solid;
+   border-color:        #bbb;
 }
 
 .ex-desc {
    text-align:          center;
 }
+
+.run {
+   text-align:          center;
+   color:               red;
+}
+.run:hover {
+   color:               #ff0000;
+   cursor:              pointer;
+}
+
 
 .front {
    position:            relative;
