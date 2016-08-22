@@ -141,6 +141,7 @@ a {
 #fifth > .back { background-color:    #66BE12; }
 /* end tiles */
 
+
 #first, #second, #third, #fourth, #fifth {
    opacity:             0.8;
 }
@@ -189,6 +190,7 @@ a {
 
 .ex-desc {
    text-align:          center;
+   padding:             10px;
 }
 
 .run {

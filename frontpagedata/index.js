@@ -1,6 +1,6 @@
 var slideSpeed = 'fast'; //'slow';
 var prevPage = '#page-home';
-var duration = 0.3; //0.5;
+var duration = 0.2;//0.3; //0.5;
 var durationMilli = duration * 1000;
 var checkIfNeedsToFlipBackDelay = 300;
 var debug = false;
