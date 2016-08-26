@@ -12,6 +12,16 @@ function onResize() {
 }
 
 function init() {
+   var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+   var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+   var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+   var is_safari = navigator.userAgent.indexOf("Safari") > -1;
+   var is_opera = navigator.userAgent.toLowerCase().indexOf("op") > -1;
+   if ((is_chrome)&&(is_safari)) {is_safari=false;}
+   if ((is_chrome)&&(is_opera)) {is_chrome=false;}
+   if (is_safari)
+      alert("This page is broken on Safari. It will be fixed whenever I have access to Mac machine. Sorry inconvenience");
+
    $('.page').hide();
    onResize();
    $(window).resize(() => onResize());
@@ -74,9 +84,6 @@ $(function() {
       hovering = false;
    });*/
 
-   $('.back').hide();
-   var t = $('.tiles');
-
    $('.back').append('<a class="run"><h1>Run!</h1></a>');
    $('#first > .back > .run').attr('href', 'https://forty7.org/buz/burnz/');
    $('#second > .back > .run').attr('href', 'https://forty7.org/fun/ideal-octo-spork/');
@@ -84,6 +91,8 @@ $(function() {
    $('#fourth > .back > .run').attr('href', 'https://forty7.org/ira');
    $('#fifth > .back > .run').attr('href', 'https://forty7.org/fun/wheel/');
 
+  $('.back').hide();
+  var t = $('.tiles');
 
    var status = {};
    t.each(function() {
@@ -131,7 +140,6 @@ $(function() {
          setTimeout(function() { checkIfLeft(id); }, checkIfNeedsToFlipBackDelay);
    }
 
-
    function onHalfBackRot(el, f, b) {
       f.show();
       b.hide();
@@ -148,7 +156,6 @@ $(function() {
 
    function onMouseOutRec(el) {
       var id = el.attr('id');
-
       /*if (status[id] != 'turned' && status3[id] == true) {
          console.log("we haven't finished turning yet, can't turn back: " + id);
          setTimeout(function() { onMouseOutRec(el); }, 500);
@@ -156,9 +163,7 @@ $(function() {
       }
       else
          console.log('rotating back: ' + id);*/
-
       status[id] = 'startback';
-
       var f = el.find('.front');
       var b = el.find('.back');
 
@@ -194,10 +199,8 @@ function animate(el, name, duration) {
    el.css('animation-fill-mode', 'forwards');
 }
 
-
 var x = 'X'; var y = 'Y'; var z = 'Z';
 function rotate(el, axis, deg) {
    el.css('transform', 'rotate' + axis + '(' + deg + 'deg)');
 }
-
 
